@@ -41,7 +41,7 @@ public class ClaimServiceImpl implements ClaimService {
 //		Set<ClaimDto> claims = policy.getClaims();
 //		claims.add(claim);
 //		policy.setClaims(claims);
-		claim.setPolicy(policy);
+//		claim.setPolicy(policy);
 
 //		insurancePolicyRepository.save(modelMapper.map(policy, InsurancePolicy.class));
 
@@ -60,7 +60,7 @@ public class ClaimServiceImpl implements ClaimService {
 		Claim claime = claimRepository.findById(claimId)
 				.orElseThrow(() -> new ResourceNotFoundException("Claim ", "Claim id", "" + claimId));
 		Claim newClaim = modelMapper.map(claim, Claim.class);
-		newClaim.setId(claimId);
+		//newClaim.setId(claimId);
 		newClaim.setClaimDate(claime.getClaimDate());
 		return claimRepository.save(newClaim);
 	}

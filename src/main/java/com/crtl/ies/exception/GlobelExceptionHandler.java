@@ -22,7 +22,7 @@ public class GlobelExceptionHandler {
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<ResponseModel> responseNotFountException(ResourceNotFoundException rs){
 		
-		ResponseModel responseModel = new ResponseModel(rs.getMessage(), false, LocalDateTime.now());
+		ResponseModel responseModel = new ResponseModel();
 		return new ResponseEntity<ResponseModel>(responseModel, HttpStatus.BAD_REQUEST);
 		
 	}
@@ -45,13 +45,13 @@ public class GlobelExceptionHandler {
 	public ResponseEntity<ResponseModel> dataIntegrityViolationException(DataIntegrityViolationException rs){
 		String msg="data is already store in database!!                                ."
 				+rs.getMostSpecificCause().toString();
-		ResponseModel responseModel = new ResponseModel(msg, false, LocalDateTime.now());
+		ResponseModel responseModel = new ResponseModel();
 		return new ResponseEntity<ResponseModel>(responseModel, HttpStatus.BAD_REQUEST);
 	}
 	
 	@ExceptionHandler(InvalidDataAccessResourceUsageException.class)
 	public ResponseEntity<ResponseModel> invalidDataAccessResourceUsageException(InvalidDataAccessResourceUsageException rs){
-		ResponseModel responseModel = new ResponseModel(rs.getMessage(), false, LocalDateTime.now());
+		ResponseModel responseModel = new ResponseModel();
 		return new ResponseEntity<ResponseModel>(responseModel, HttpStatus.BAD_REQUEST);
 	}
 
