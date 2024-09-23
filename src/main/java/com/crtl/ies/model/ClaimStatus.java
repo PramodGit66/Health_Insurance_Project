@@ -13,5 +13,9 @@ public enum ClaimStatus {
 
     private String displayName;
 
+	private ClaimStatus(String displayName) {
+		this.displayName = displayName;
+	}
+
   
 }

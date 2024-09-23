@@ -33,7 +33,8 @@ import lombok.ToString;
 @Table(name = "insurance_policy")
 public class InsurancePolicy {
 
-    @Id
+   
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

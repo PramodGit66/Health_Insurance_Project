@@ -5,8 +5,9 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.crtl.ies.model.Client;
 
+
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Setter
 public class InsurancePolicyDto {
 
+	@Id
     private Integer id;
 
     @NotBlank(message = "Policy Number is required")
